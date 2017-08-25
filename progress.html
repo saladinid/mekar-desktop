@@ -197,7 +197,51 @@
     </div>
     <div class="process-box"></div>
     <div class="field-row"><button class="main-button">batalkan</button></div>
-    <a href="./fail.html">fail</a>
+		<a href="./fail.html">fail</a>
+		 <button id="openFile" onclick="openPopUp();">Open</button> 
+		<script>
+			function openPopUp () {
+			// const {dialog} = require('electron')
+			remote = require('electron').remote,
+			dialog = remote.dialog,
+			dialog.showMessageBox({
+				type: 'info',
+  				title: 'Waduh',
+  				message: 'message',
+				detail: 'Extra information of the message.',
+				buttons: ['hello']
+			})
+			// dialog.showOpenDialog("aw")
+			// console.log(dialog.showOpenDialog({properties: ['openFile', 'openDirectory', 'multiSelections']}))
+			}
+		/*
+		var remote = require('remote'); 
+		var dialog = remote.require('dialog');
+		var fs = require('fs');
+
+		function openFile () {
+
+		dialog.showOpenDialog({ filters: [
+
+			{ name: 'text', extensions: ['txt'] }
+
+			]}, function (fileNames) {
+
+			if (fileNames === undefined) return;
+
+			var fileName = fileNames[0];
+
+			fs.readFile(fileName, 'utf-8', function (err, data) {
+
+				document.getElementById("editor").value = data;
+
+			});
+
+		}); 
+
+		}
+		*/
+		</script>
   </body>
 
   <script>
