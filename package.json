@@ -19,5 +19,7 @@
   "devDependencies": {
     "electron": "~1.6.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "shelljs": "^0.7.8"
+  }
 }

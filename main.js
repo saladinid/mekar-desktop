@@ -7,6 +7,17 @@ const BrowserWindow = electron.BrowserWindow
 const path = require('path')
 const url = require('url')
 
+// const shell = require('shelljs')
+
+var exec = require('child_process').execSync;
+var cmd = "javac ./java/src/Hallo.java -d ./java/bin/ && java -cp ./java/bin mekar.java.Hallo";
+
+var options = {
+  encoding: 'utf8'
+};
+
+console.log(exec(cmd, options));
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
